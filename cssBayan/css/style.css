@@ -2,3 +2,42 @@
   margin: 0;
   padding: 0;
 }
+
+.accordion-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  border-bottom: 0.1em solid #000000;
+}
+
+.accordion-item__description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-item__input {
+  appearance: none;
+}
+
+.accordion-item__text {
+  display: block;
+  font-size: 2em;
+  
+  cursor: pointer;
+}
+
+.accordion-item__img {
+  display: none;
+  width: 21vw;
+  height: 42vh;
+  margin: 0 auto 2em;
+}
+
+.accordion-item__icon {
+  width: 2vw;
+  height: 4vh;
+  background: url('../assets/icons/plus-solid.svg') center/contain no-repeat;
+}
