@@ -1,42 +1,66 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
 }
 
-.accordion-wrapper {
-  width: 80%;
+body {
+  font-family: Roboto;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #bdbcb1;
+}
+
+.container {
+  width: 50%;
   margin: 0 auto;
 }
 
-.accordion-item {
-  border-bottom: 0.1em solid #000000;
+.title-page {
+  font-size: 3rem;
 }
 
-.accordion-item__description {
+.accordion-item {
+  border-bottom: 0.1rem solid #9c9b87;
+  color: #8832b3;
+}
+
+.accordion__description {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.accordion-item__input {
+.accordion__input {
   appearance: none;
 }
 
-.accordion-item__text {
+.accordion__text {
   display: block;
-  font-size: 2em;
-  
+  font-size: 1.7rem;
   cursor: pointer;
 }
 
-.accordion-item__img {
+.accordion__img {
   display: none;
   width: 21vw;
   height: 42vh;
-  margin: 0 auto 2em;
+  margin: 0 auto 2rem;
 }
 
-.accordion-item__icon {
+.accordion__icon {
   width: 2vw;
   height: 4vh;
   background: url('../assets/icons/plus-solid.svg') center/contain no-repeat;
