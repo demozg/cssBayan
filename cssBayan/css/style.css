@@ -11,6 +11,7 @@
   font-weight: bold;
   font-style: normal;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -24,16 +25,19 @@ body {
 }
 
 .container {
-  width: 50%;
+  max-width: 50%;
   margin: 0 auto;
 }
 
 .title-page {
-  font-size: 3rem;
+  font-size: 2.7rem;
+  font-weight: bold;
 }
 
-.accordion-item {
-  border-bottom: 0.1rem solid #9c9b87;
+.accordion {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
   color: #8832b3;
 }
 
@@ -41,27 +45,153 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.5rem;
+  border-top: 0.07rem solid #9c9b87;
 }
 
 .accordion__input {
-  appearance: none;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .accordion__text {
-  display: block;
   font-size: 1.7rem;
-  cursor: pointer;
-}
-
-.accordion__img {
-  display: none;
-  width: 21vw;
-  height: 42vh;
-  margin: 0 auto 2rem;
 }
 
 .accordion__icon {
   width: 2vw;
   height: 4vh;
-  background: url('../assets/icons/plus-solid.svg') center/contain no-repeat;
+  opacity: 0;
+  background-image: url('../assets/icons/plus-solid.svg');
+  background-repeat: no-repeat;
+  transition: all 0.5s ease-in;
+}
+
+.accordion__img {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  text-align: center;
+  transition: all 0.5s ease-in;
+}
+
+.accordion__img img {
+  max-width: 0;
+  transition: all 0.5s ease-in;
+}
+
+.accordion input:checked ~ .accordion__img {
+  opacity: 1;
+  max-height: 100%;
+  transition: all 0.5s ease-in;
+}
+
+.accordion input:checked  ~ .accordion__description {
+  color: #000000;
+}
+
+.accordion-item:active .accordion .accordion__description {
+  color: #3259b3;
+}
+
+.accordion-item:active .accordion .accordion__description .accordion__icon {
+  background-image: url('../assets/icons/cross.svg');
+  transition: all 0.5s ease-in;
+}
+
+.accordion input:checked ~ .accordion__img img {
+  max-width: 45%;
+  transition: all 0.5s ease-in;
+}
+
+.accordion-item:active .accordion .accordion__img img {
+  opacity: 0.6;
+}
+
+.accordion input:checked  + .accordion__description .accordion__icon {
+  background-image: url('../assets/icons/cross.svg');
+  transition: all 0.5s ease-in;
+}
+
+.accordion-item:checked .accordion .accordion__description .accordion__icon  {
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .accordion input:hover  ~ .accordion__description {
+    color: #000000;
+  }
+
+  .accordion-wrapper:hover  .accordion__description .accordion__icon {
+    opacity: 1;
+  }
+
+  .accordion input:hover  + .accordion__description .accordion__icon {
+    background-image: url('../assets/icons/cross.svg');
+    transition: all 0.5s ease-in;
+  }
+
+  .accordion input:hover ~ .accordion__img {
+    opacity: 1;
+    max-height: 100%;
+    transition: all 0.5s ease-in;
+  } 
+
+  .accordion input:hover ~ .accordion__img img{
+    max-width: 45%;
+    transition: all 0.3s ease-in;
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1100px) {
+  .container {
+    max-width: 70%;
+  }
+
+  .title-page {
+    font-size: 2rem;
+  }
+
+  .accordion__description {
+    margin-bottom: 0.3rem;
+  }
+
+  .accordion__text {
+    font-size: 1.3rem;
+  }
+
+  .accordion__icon {
+    opacity: 1;
+  }
+
+  .accordion input:checked ~ .accordion__img img {
+    max-width: 50%;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 700px) {
+  .container {
+    max-width: 90%;
+  }
+
+  .title-page {
+    font-size: 1.6rem;
+  }
+
+  .accordion__description {
+    margin-bottom: 0.1rem;
+  }
+
+  .accordion__text {
+    font-size: 0.9rem;
+  }
+
+  .accordion__icon {
+    opacity: 1;
+  }
+
+  .accordion input:checked ~ .accordion__img img {
+    max-width: 55%;
+  }
 }
