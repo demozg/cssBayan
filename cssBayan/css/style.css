@@ -157,8 +157,8 @@ body {
   }
 
   .accordion__icon {
-    width: 2vw;
-    height: 6vh;
+    width: 3vw;
+    height: 3vh;
     opacity: 1;
   }
 
@@ -182,7 +182,7 @@ body {
 
   .accordion__icon {
     width: 3vw;
-    height: 4vh;
+    height: 3vh;
     opacity: 1;
   }
 
